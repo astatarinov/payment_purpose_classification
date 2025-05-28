@@ -1,0 +1,7 @@
+trainer:
+  device: cpu
+  batch_size: 64
+  lr: 1e-3
+  weight_decay: 1e-5
+  num_epochs: 50
+  activation: gelu

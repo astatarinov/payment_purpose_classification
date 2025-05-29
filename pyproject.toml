@@ -1,0 +1,118 @@
+[tool.poetry]
+name = "payment-classification"
+version = "1.0.0"
+description = "ML / LLM project created from template"
+authors = ["", "astatarinov"]
+license = "MIT License"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<4.0"
+openai = "^1.31.0"
+
+pydantic = [
+    {version = "^2.7.4", platform = "linux"},
+    {version = "^2.7.4", platform = "darwin"}
+]
+pydantic-core = [
+    {version = "^2.19.0", platform = "linux"},
+    {version = "^2.19.0", platform = "darwin"}
+]
+pydantic-settings = [
+    {version = "^2.3.3", platform = "linux"},
+    {version = "^2.3.3", platform = "darwin"}
+]
+fastapi = [
+    {version = "^0.111.0", platform = "linux"},
+    {version = "^0.111.0", platform = "darwin"}
+]
+uvicorn = [
+    {version = "^0.30.1", platform = "linux"},
+    {version = "^0.30.1", platform = "darwin"}
+]
+annotated-types = [
+    {version = "^0.7.0", platform = "linux"},
+    {version = "^0.7.0", platform = "darwin"}
+]
+python-dotenv = [
+    {version = "^1.0.1", platform = "linux"},
+    {version = "^1.0.1", platform = "darwin"}
+]
+h11 = [
+    {version = "^0.14.0", platform = "darwin"},
+    {version = "^0.14.0", platform = "linux"}
+]
+uvloop = [
+    {version = "^0.19.0", platform = "darwin"},
+    {version = "^0.19.0", platform = "linux"}
+]
+starlette = [
+    {version = "^0.37.2", platform = "darwin"},
+    {version = "^0.37.2", platform = "linux"}
+]
+loguru = "^0.7.2"
+numpy = "1.26.4"
+psycopg2-binary = "2.9.10"
+sqlalchemy = {version = "^2.0.36", extras = ["asyncio", "asyncpg"]}
+asyncpg = "^0.30.0"
+datetime = "*"
+aiolimiter = "^1.2.1"
+cloudpickle = "^3.1.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "*"
+#notebook = "^7.3.3"
+#mlflow = "^2.21.0"
+#scikit-learn = "^1.6.1"
+
+
+[tool.isort]
+line_length = 120
+sections = ["FUTURE", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
+no_lines_before = ["STDLIB", "LOCALFOLDER"]
+known_third_party = []
+multi_line_output = 3
+lines_after_imports = 2
+profile = "black"
+combine_as_imports = true
+
+[tool.black]
+line-length = 120
+target-version = ["py310"]
+
+[tool.ruff]
+fix = true
+
+select = ["ALL"]
+ignore = ["I","EM","FBT","TRY003","S101","D101","D102","D103","D104","D105","G004","D107","D211","D213","FA102"]
+
+fixable = ["ALL"]
+unfixable = ["F841"]
+
+exclude = [
+    ".git",
+    ".ruff_cache",
+    "venv",
+]
+
+line-length = 120
+
+target-version = "py310"
+
+cache-dir = "~/.cache/ruff"
+
+[tool.ruff.mccabe]
+max-complexity = 10
+
+[[tool.poetry.source]]
+name = "<your_name>"
+url = "<your_url>"
+priority = "primary"
+[[tool.poetry.source]]
+name = "cibrepo"
+url = "<your_url>"
+priority = "supplemental"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
